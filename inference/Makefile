@@ -20,7 +20,6 @@ convert: ../../DeepSeek-V3-Demo
 	 --n-experts 256 --model-parallel 16
 run:
 	torchrun \
-	 --nnodes 2 \
 	 --nproc-per-node 8 \
 	 --node-rank $(RANK) \
 	 --master-addr $(ADDR) \
