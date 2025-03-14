@@ -9,7 +9,9 @@ ifeq ($(SHOWENV),)
 else
 	export
 endif
-all: download convert
+all: install download convert run
+install run:
+	$(MAKE) -C inference $@
 download:
 	if [ "$(HAVE)" != "$(REQUIRED)" ]; then \
 		for n in $$(seq 1 $(REQUIRED)); do \
