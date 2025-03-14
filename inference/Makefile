@@ -1,5 +1,5 @@
 install:
-	pip install -r requirements.txt
+	pip install --break-system-packages -r requirements.txt
 convert: convert.py
 	python3 $< \
 	 --hf-ckpt-path ../ \
