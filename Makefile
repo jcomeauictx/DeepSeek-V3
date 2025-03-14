@@ -9,6 +9,7 @@ ifeq ($(SHOWENV),)
 else
 	export
 endif
+all: download convert
 download:
 	if [ "$(HAVE)" != "$(REQUIRED)" ]; then \
 		for n in $$(seq 1 $(REQUIRED)); do \
