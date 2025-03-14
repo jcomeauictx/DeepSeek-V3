@@ -1,3 +1,8 @@
+# RANK default stolen from generate.py
+# ADDR is a guess, not sure what it wants, and haven't yet investigated
+RANK ?= 0
+ADDR ?= 127.0.0.1
+export RANK ADDR
 install:
 	pip install --break-system-packages -r requirements.txt
 convert: convert.py
