@@ -20,7 +20,7 @@ download:
 %.download:
 	wget -N $(URL)/$*
 convert:
-	python convert.py --hf-ckpt-path /path/to/DeepSeek-V3 --save-path /path/to/DeepSeek-V3-Demo --n-experts 256 --model-parallel 16
+	$(MAKE) -C inference $@
 env:
 ifeq ($(SHOWENV),)
 	$(MAKE) SHOWENV=1 $@
