@@ -4,6 +4,8 @@ RANK ?= 0
 ADDR ?= 127.0.0.1
 OMP_NUM_THREADS ?= $(shell python3 -c \
  "from multiprocessing import cpu_count; print(cpu_count())")
+DOWNLOADED := $(wildcard ../model-*.safetensors)
+CONVERTED := $(wildcard ../../DeepSeek-V3-Demo/model*.safetensors)
 ifeq ($(SHOWENV),)
 	export RANK ADDR OMP_NUM_THREADS
 else

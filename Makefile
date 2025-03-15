@@ -1,6 +1,7 @@
 URL := https://huggingface.co/deepseek-ai/DeepSeek-V3-Base/resolve/main
 PATTERN := model-%05d-of-000163.safetensors
 DOWNLOADED = $(wildcard model-00[0-9][0-9][0-9]-of-000163.safetensors)
+CONVERTED = $(wildcard ../DeepSeek-V3-Demo/model*.safetensors)
 HAVE = $(words $(DOWNLOADED))
 REQUIRED := 5
 MAKE ?= make -s
