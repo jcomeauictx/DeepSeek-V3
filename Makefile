@@ -32,3 +32,16 @@ else
 	$@
 	$(MAKE) -C inference $@
 endif
+login:
+	if [ ! -s "$(HOME)/.cache/huggingface/token" ]; then \
+	 huggingface-cli login; \
+	fi
+llama3: login
+	# https://stackoverflow.com/a/78427080/493161
+	pip install --break-system-packages \
+	 transformers ctranslate2 OpenNMT-py==2.* sentencepiece sacremoses
+	ct2-transformers-converter \
+	 --model meta-llama/Meta-Llama-3-8B-Instruct \
+	 --output_dir Meta-Llama-3-8B-Instruct \
+	 --force \
+	 --quantization int8
