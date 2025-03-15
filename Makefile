@@ -33,6 +33,7 @@ else
 	$(MAKE) -C inference $@
 endif
 login:
+	# make SURE to edit your token and add all permissions needed
 	if [ ! -s "$(HOME)/.cache/huggingface/token" ]; then \
 	 huggingface-cli login; \
 	fi
