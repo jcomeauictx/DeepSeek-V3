@@ -36,3 +36,6 @@ ifeq ($(SHOWENV),)
 else
 	$@
 endif
+devices:
+	python3 -c "import torch; print([torch.cuda.get_device_name(n) \
+	 for n in torch.cuda.device_count()])"
