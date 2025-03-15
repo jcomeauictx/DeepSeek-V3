@@ -22,7 +22,7 @@ download:
 	fi
 %.download:
 	wget -N $(URL)/$*
-convert:
+convert devices:
 	$(MAKE) -C inference $@
 env:
 ifeq ($(SHOWENV),)
